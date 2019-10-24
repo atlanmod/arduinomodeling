@@ -332,10 +332,53 @@ class Utilities_ExecutableAspect extends Instruction_ExecutableAspect {
 }
 
 @Aspect(className=WaitFor)
-class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect { 
-		@OverrideAspectMethod
+class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect { 	
+	boolean waiting = false
+	boolean moduleActivated = false;
+	int value;
+	
+	@Step
+	@OverrideAspectMethod
 	def void execute() {
-		println("Wait for!");
+		
+		if ( _self.validated) {
+			_self.moduleActivated = false
+			_self.waiting = false
+			return
+		}
+		_self.waiting = true
+		while (!(_self.moduleActivated && _self.validated)) {
+			_self.moduleActivated = false
+			println("Waiting")
+			_self.loop			
+		}
+		_self.moduleActivated = false
+		_self.waiting = false
+	}
+	
+	private def boolean isValidated() {
+		switch(_self.mode) {
+			case CHANGE:
+				return _self.value != _self.pin.level
+					
+			case FALLING:
+				return _self.value > _self.pin.level
+				
+			case RISING:
+				return _self.value < _self.pin.level
+				
+		}				
+	}
+	
+	@Step
+	private def void loop() {
+		Thread.sleep(100)
+	}
+	
+	def void setActivated() {
+		if (_self.waiting) {
+			_self.moduleActivated = true
+		}
 	}
 }
 
