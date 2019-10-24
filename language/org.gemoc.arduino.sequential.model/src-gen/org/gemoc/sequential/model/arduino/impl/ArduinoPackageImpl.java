@@ -1494,7 +1494,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWaitFor_Module() {
+	public EReference getWaitFor_Pin() {
 		return (EReference)waitForEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1734,6 +1734,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		arduinoModuleEClass = createEClass(ARDUINO_MODULE);
 
+		waitForEClass = createEClass(WAIT_FOR);
+		createEReference(waitForEClass, WAIT_FOR__PIN);
+		createEAttribute(waitForEClass, WAIT_FOR__MODE);
+
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__INSTRUCTIONS);
 
@@ -1752,10 +1756,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		bluetoothTransceiverEClass = createEClass(BLUETOOTH_TRANSCEIVER);
 		createEReference(bluetoothTransceiverEClass, BLUETOOTH_TRANSCEIVER__CONNECTED_TRANSCEIVER);
-
-		waitForEClass = createEClass(WAIT_FOR);
-		createEReference(waitForEClass, WAIT_FOR__MODULE);
-		createEAttribute(waitForEClass, WAIT_FOR__MODE);
 
 		// Create enums
 		timeEEnum = createEEnum(TIME);
@@ -1853,6 +1853,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		fanEClass.getESuperTypes().add(this.getArduinoDigitalModule());
 		musicPlayerEClass.getESuperTypes().add(this.getArduinoAnalogModule());
 		arduinoModuleEClass.getESuperTypes().add(this.getModule());
+		waitForEClass.getESuperTypes().add(this.getUtilities());
 		arduinoBoardEClass.getESuperTypes().add(this.getBoard());
 		arduinoDigitalModuleEClass.getESuperTypes().add(this.getArduinoModule());
 		arduinoAnalogModuleEClass.getESuperTypes().add(this.getArduinoModule());
@@ -1860,7 +1861,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		booleanVariableRefEClass.getESuperTypes().add(this.getBooleanExpression());
 		arduinoCommunicationModuleEClass.getESuperTypes().add(this.getArduinoDigitalModule());
 		bluetoothTransceiverEClass.getESuperTypes().add(this.getArduinoAnalogModule());
-		waitForEClass.getESuperTypes().add(this.getUtilities());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(boardEClass, Board.class, "Board", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1999,6 +1999,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(arduinoModuleEClass, ArduinoModule.class, "ArduinoModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(waitForEClass, WaitFor.class, "WaitFor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWaitFor_Pin(), this.getPin(), null, "pin", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWaitFor_Mode(), this.getChangeType(), "mode", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2017,10 +2021,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(bluetoothTransceiverEClass, BluetoothTransceiver.class, "BluetoothTransceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBluetoothTransceiver_ConnectedTransceiver(), this.getBluetoothTransceiver(), null, "connectedTransceiver", null, 0, -1, BluetoothTransceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(waitForEClass, WaitFor.class, "WaitFor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWaitFor_Module(), this.getModule(), null, "module", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWaitFor_Mode(), this.getChangeType(), "mode", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeEEnum, Time.class, "Time");

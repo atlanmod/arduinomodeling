@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.sequential.model.arduino.ArduinoPackage;
 import org.gemoc.sequential.model.arduino.ChangeType;
+import org.gemoc.sequential.model.arduino.Pin;
 import org.gemoc.sequential.model.arduino.WaitFor;
 
 /**
@@ -21,7 +22,7 @@ import org.gemoc.sequential.model.arduino.WaitFor;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.sequential.model.arduino.impl.WaitForImpl#getModule <em>Module</em>}</li>
+ *   <li>{@link org.gemoc.sequential.model.arduino.impl.WaitForImpl#getPin <em>Pin</em>}</li>
  *   <li>{@link org.gemoc.sequential.model.arduino.impl.WaitForImpl#getMode <em>Mode</em>}</li>
  * </ul>
  *
@@ -29,14 +30,14 @@ import org.gemoc.sequential.model.arduino.WaitFor;
  */
 public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	/**
-	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
+	 * The cached value of the '{@link #getPin() <em>Pin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModule()
+	 * @see #getPin()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.gemoc.sequential.model.arduino.Module module;
+	protected Pin pin;
 
 	/**
 	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
@@ -82,16 +83,16 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.gemoc.sequential.model.arduino.Module getModule() {
-		if (module != null && module.eIsProxy()) {
-			InternalEObject oldModule = (InternalEObject)module;
-			module = (org.gemoc.sequential.model.arduino.Module)eResolveProxy(oldModule);
-			if (module != oldModule) {
+	public Pin getPin() {
+		if (pin != null && pin.eIsProxy()) {
+			InternalEObject oldPin = (InternalEObject)pin;
+			pin = (Pin)eResolveProxy(oldPin);
+			if (pin != oldPin) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.WAIT_FOR__MODULE, oldModule, module));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.WAIT_FOR__PIN, oldPin, pin));
 			}
 		}
-		return module;
+		return pin;
 	}
 
 	/**
@@ -99,8 +100,8 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.gemoc.sequential.model.arduino.Module basicGetModule() {
-		return module;
+	public Pin basicGetPin() {
+		return pin;
 	}
 
 	/**
@@ -108,11 +109,11 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModule(org.gemoc.sequential.model.arduino.Module newModule) {
-		org.gemoc.sequential.model.arduino.Module oldModule = module;
-		module = newModule;
+	public void setPin(Pin newPin) {
+		Pin oldPin = pin;
+		pin = newPin;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.WAIT_FOR__MODULE, oldModule, module));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.WAIT_FOR__PIN, oldPin, pin));
 	}
 
 	/**
@@ -144,9 +145,9 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArduinoPackage.WAIT_FOR__MODULE:
-				if (resolve) return getModule();
-				return basicGetModule();
+			case ArduinoPackage.WAIT_FOR__PIN:
+				if (resolve) return getPin();
+				return basicGetPin();
 			case ArduinoPackage.WAIT_FOR__MODE:
 				return getMode();
 		}
@@ -161,8 +162,8 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArduinoPackage.WAIT_FOR__MODULE:
-				setModule((org.gemoc.sequential.model.arduino.Module)newValue);
+			case ArduinoPackage.WAIT_FOR__PIN:
+				setPin((Pin)newValue);
 				return;
 			case ArduinoPackage.WAIT_FOR__MODE:
 				setMode((ChangeType)newValue);
@@ -179,8 +180,8 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.WAIT_FOR__MODULE:
-				setModule((org.gemoc.sequential.model.arduino.Module)null);
+			case ArduinoPackage.WAIT_FOR__PIN:
+				setPin((Pin)null);
 				return;
 			case ArduinoPackage.WAIT_FOR__MODE:
 				setMode(MODE_EDEFAULT);
@@ -197,8 +198,8 @@ public class WaitForImpl extends UtilitiesImpl implements WaitFor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArduinoPackage.WAIT_FOR__MODULE:
-				return module != null;
+			case ArduinoPackage.WAIT_FOR__PIN:
+				return pin != null;
 			case ArduinoPackage.WAIT_FOR__MODE:
 				return mode != MODE_EDEFAULT;
 		}

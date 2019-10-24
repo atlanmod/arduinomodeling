@@ -12,7 +12,7 @@ package org.gemoc.sequential.model.arduino;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.sequential.model.arduino.WaitFor#getModule <em>Module</em>}</li>
+ *   <li>{@link org.gemoc.sequential.model.arduino.WaitFor#getPin <em>Pin</em>}</li>
  *   <li>{@link org.gemoc.sequential.model.arduino.WaitFor#getMode <em>Mode</em>}</li>
  * </ul>
  *
@@ -22,30 +22,30 @@ package org.gemoc.sequential.model.arduino;
  */
 public interface WaitFor extends Utilities {
 	/**
-	 * Returns the value of the '<em><b>Module</b></em>' reference.
+	 * Returns the value of the '<em><b>Pin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Module</em>' reference isn't clear,
+	 * If the meaning of the '<em>Pin</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Module</em>' reference.
-	 * @see #setModule(org.gemoc.sequential.model.arduino.Module)
-	 * @see org.gemoc.sequential.model.arduino.ArduinoPackage#getWaitFor_Module()
+	 * @return the value of the '<em>Pin</em>' reference.
+	 * @see #setPin(Pin)
+	 * @see org.gemoc.sequential.model.arduino.ArduinoPackage#getWaitFor_Pin()
 	 * @model
 	 * @generated
 	 */
-	org.gemoc.sequential.model.arduino.Module getModule();
+	Pin getPin();
 
 	/**
-	 * Sets the value of the '{@link org.gemoc.sequential.model.arduino.WaitFor#getModule <em>Module</em>}' reference.
+	 * Sets the value of the '{@link org.gemoc.sequential.model.arduino.WaitFor#getPin <em>Pin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Module</em>' reference.
-	 * @see #getModule()
+	 * @param value the new value of the '<em>Pin</em>' reference.
+	 * @see #getPin()
 	 * @generated
 	 */
-	void setModule(org.gemoc.sequential.model.arduino.Module value);
+	void setPin(Pin value);
 
 	/**
 	 * Returns the value of the '<em><b>Mode</b></em>' attribute.

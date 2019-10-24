@@ -46,26 +46,26 @@ public class WaitForItemProvider extends UtilitiesItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModulePropertyDescriptor(object);
+			addPinPropertyDescriptor(object);
 			addModePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Module feature.
+	 * This adds a property descriptor for the Pin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModulePropertyDescriptor(Object object) {
+	protected void addPinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WaitFor_module_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WaitFor_module_feature", "_UI_WaitFor_type"),
-				 ArduinoPackage.Literals.WAIT_FOR__MODULE,
+				 getString("_UI_WaitFor_pin_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WaitFor_pin_feature", "_UI_WaitFor_type"),
+				 ArduinoPackage.Literals.WAIT_FOR__PIN,
 				 true,
 				 false,
 				 true,
