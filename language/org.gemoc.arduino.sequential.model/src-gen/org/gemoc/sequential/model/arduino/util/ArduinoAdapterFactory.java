@@ -330,6 +330,10 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 				return createArduinoModuleAdapter();
 			}
 			@Override
+			public Adapter caseWaitFor(WaitFor object) {
+				return createWaitForAdapter();
+			}
+			@Override
 			public Adapter caseBlock(Block object) {
 				return createBlockAdapter();
 			}
@@ -356,10 +360,6 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBluetoothTransceiver(BluetoothTransceiver object) {
 				return createBluetoothTransceiverAdapter();
-			}
-			@Override
-			public Adapter caseWaitFor(WaitFor object) {
-				return createWaitForAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

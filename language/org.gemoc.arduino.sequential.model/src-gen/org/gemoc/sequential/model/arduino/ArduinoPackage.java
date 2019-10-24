@@ -1726,7 +1726,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoDigitalModule()
 	 * @generated
 	 */
-	int ARDUINO_DIGITAL_MODULE = 53;
+	int ARDUINO_DIGITAL_MODULE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1883,7 +1883,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoAnalogModule()
 	 * @generated
 	 */
-	int ARDUINO_ANALOG_MODULE = 54;
+	int ARDUINO_ANALOG_MODULE = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2179,7 +2179,93 @@ public interface ArduinoPackage extends EPackage {
 	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getBlock()
 	 * @generated
 	 */
-	int BLOCK = 51;
+	int BLOCK = 52;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.ArduinoBoardImpl <em>Board</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoBoardImpl
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoBoard()
+	 * @generated
+	 */
+	int ARDUINO_BOARD = 53;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.BooleanVariableRefImpl <em>Boolean Variable Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.sequential.model.arduino.impl.BooleanVariableRefImpl
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getBooleanVariableRef()
+	 * @generated
+	 */
+	int BOOLEAN_VARIABLE_REF = 56;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.ArduinoCommunicationModuleImpl <em>Communication Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoCommunicationModuleImpl
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoCommunicationModule()
+	 * @generated
+	 */
+	int ARDUINO_COMMUNICATION_MODULE = 57;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.BluetoothTransceiverImpl <em>Bluetooth Transceiver</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.sequential.model.arduino.impl.BluetoothTransceiverImpl
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getBluetoothTransceiver()
+	 * @generated
+	 */
+	int BLUETOOTH_TRANSCEIVER = 58;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.WaitForImpl <em>Wait For</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.sequential.model.arduino.impl.WaitForImpl
+	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getWaitFor()
+	 * @generated
+	 */
+	int WAIT_FOR = 51;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FOR__PIN = UTILITIES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FOR__MODE = UTILITIES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Wait For</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FOR_FEATURE_COUNT = UTILITIES_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Wait For</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FOR_OPERATION_COUNT = UTILITIES_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -2207,16 +2293,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int BLOCK_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.ArduinoBoardImpl <em>Board</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoBoardImpl
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoBoard()
-	 * @generated
-	 */
-	int ARDUINO_BOARD = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2273,16 +2349,6 @@ public interface ArduinoPackage extends EPackage {
 	int ARDUINO_BOARD_OPERATION_COUNT = BOARD_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.BooleanVariableRefImpl <em>Boolean Variable Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.sequential.model.arduino.impl.BooleanVariableRefImpl
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getBooleanVariableRef()
-	 * @generated
-	 */
-	int BOOLEAN_VARIABLE_REF = 55;
-
-	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2310,16 +2376,6 @@ public interface ArduinoPackage extends EPackage {
 	int BOOLEAN_VARIABLE_REF_OPERATION_COUNT = VARIABLE_REF_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.ArduinoCommunicationModuleImpl <em>Communication Module</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoCommunicationModuleImpl
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getArduinoCommunicationModule()
-	 * @generated
-	 */
-	int ARDUINO_COMMUNICATION_MODULE = 56;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2345,16 +2401,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARDUINO_COMMUNICATION_MODULE_OPERATION_COUNT = ARDUINO_DIGITAL_MODULE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.BluetoothTransceiverImpl <em>Bluetooth Transceiver</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.sequential.model.arduino.impl.BluetoothTransceiverImpl
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getBluetoothTransceiver()
-	 * @generated
-	 */
-	int BLUETOOTH_TRANSCEIVER = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2391,52 +2437,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int BLUETOOTH_TRANSCEIVER_OPERATION_COUNT = ARDUINO_ANALOG_MODULE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.impl.WaitForImpl <em>Wait For</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.sequential.model.arduino.impl.WaitForImpl
-	 * @see org.gemoc.sequential.model.arduino.impl.ArduinoPackageImpl#getWaitFor()
-	 * @generated
-	 */
-	int WAIT_FOR = 58;
-
-	/**
-	 * The feature id for the '<em><b>Module</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_FOR__MODULE = UTILITIES_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Mode</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_FOR__MODE = UTILITIES_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Wait For</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_FOR_FEATURE_COUNT = UTILITIES_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Wait For</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_FOR_OPERATION_COUNT = UTILITIES_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.sequential.model.arduino.Time <em>Time</em>}' enum.
@@ -3530,15 +3530,15 @@ public interface ArduinoPackage extends EPackage {
 	EClass getWaitFor();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.sequential.model.arduino.WaitFor#getModule <em>Module</em>}'.
+	 * Returns the meta object for the reference '{@link org.gemoc.sequential.model.arduino.WaitFor#getPin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Module</em>'.
-	 * @see org.gemoc.sequential.model.arduino.WaitFor#getModule()
+	 * @return the meta object for the reference '<em>Pin</em>'.
+	 * @see org.gemoc.sequential.model.arduino.WaitFor#getPin()
 	 * @see #getWaitFor()
 	 * @generated
 	 */
-	EReference getWaitFor_Module();
+	EReference getWaitFor_Pin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.gemoc.sequential.model.arduino.WaitFor#getMode <em>Mode</em>}'.
@@ -4547,12 +4547,12 @@ public interface ArduinoPackage extends EPackage {
 		EClass WAIT_FOR = eINSTANCE.getWaitFor();
 
 		/**
-		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Pin</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WAIT_FOR__MODULE = eINSTANCE.getWaitFor_Module();
+		EReference WAIT_FOR__PIN = eINSTANCE.getWaitFor_Pin();
 
 		/**
 		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.

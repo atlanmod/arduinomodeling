@@ -537,6 +537,14 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ArduinoPackage.WAIT_FOR: {
+				WaitFor waitFor = (WaitFor)theEObject;
+				T result = caseWaitFor(waitFor);
+				if (result == null) result = caseUtilities(waitFor);
+				if (result == null) result = caseInstruction(waitFor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ArduinoPackage.BLOCK: {
 				Block block = (Block)theEObject;
 				T result = caseBlock(block);
@@ -595,14 +603,6 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				if (result == null) result = caseArduinoModule(bluetoothTransceiver);
 				if (result == null) result = caseModule(bluetoothTransceiver);
 				if (result == null) result = caseNamedElement(bluetoothTransceiver);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ArduinoPackage.WAIT_FOR: {
-				WaitFor waitFor = (WaitFor)theEObject;
-				T result = caseWaitFor(waitFor);
-				if (result == null) result = caseUtilities(waitFor);
-				if (result == null) result = caseInstruction(waitFor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -358,6 +358,15 @@
       <ecoreClass href="arduino.ecore#//ArduinoModule"/>
     </genClasses>
     <genClasses>
+      <ecoreClass href="arduino.ecore#//WaitFor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//WaitFor/pin"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//WaitFor/mode"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="arduino.ecore#//Block"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//Block/instructions"/>
@@ -391,15 +400,6 @@
       <ecoreClass href="arduino.ecore#//BluetoothTransceiver"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//BluetoothTransceiver/connectedTransceiver"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="arduino.ecore#//WaitFor"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="arduino.ecore#//WaitFor/module"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="arduino.ecore#//WaitFor/mode"/>
       </genFeatures>
     </genClasses>
   </genPackages>

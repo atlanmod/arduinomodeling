@@ -1053,11 +1053,11 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory imp
 		if (soundSensorItemProvider != null) soundSensorItemProvider.dispose();
 		if (fanItemProvider != null) fanItemProvider.dispose();
 		if (musicPlayerItemProvider != null) musicPlayerItemProvider.dispose();
+		if (waitForItemProvider != null) waitForItemProvider.dispose();
 		if (blockItemProvider != null) blockItemProvider.dispose();
 		if (arduinoBoardItemProvider != null) arduinoBoardItemProvider.dispose();
 		if (booleanVariableRefItemProvider != null) booleanVariableRefItemProvider.dispose();
 		if (bluetoothTransceiverItemProvider != null) bluetoothTransceiverItemProvider.dispose();
-		if (waitForItemProvider != null) waitForItemProvider.dispose();
 	}
 
 }

@@ -34,7 +34,7 @@ void setup() {
 				[/for]
 			[if (arduino::WaitFor.allInstances() -> size() > 0)]	
 				[for (waitFor: WaitFor | arduino::WaitFor.allInstances())] 
-	attachInterrupt(digitalPinToInterrupt([waitFor.module.eContainer().oclAsType(arduino::Pin).name/]), waitFor_[waitFor.module.name/]_[waitFor.mode/], [waitFor.mode/]);
+	attachInterrupt(digitalPinToInterrupt([waitFor.pin.name/]), waitFor_[waitFor.pin.name/]_[waitFor.mode/], [waitFor.mode/]);
 				[/for]
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	sleep_enable();
@@ -49,7 +49,7 @@ void loop() {
 }
 
 	[for (waitFor : WaitFor | arduino::WaitFor.allInstances())]
-void waitFor_[waitFor.module.name/]_[waitFor.mode/]() {
+void waitFor_[waitFor.pin.name/]_[waitFor.mode/]() {
 	sleep_disable();
 }	
 	[/for]

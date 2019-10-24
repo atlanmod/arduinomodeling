@@ -134,11 +134,11 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			case ArduinoPackage.SOUND_SENSOR: return createSoundSensor();
 			case ArduinoPackage.FAN: return createFan();
 			case ArduinoPackage.MUSIC_PLAYER: return createMusicPlayer();
+			case ArduinoPackage.WAIT_FOR: return createWaitFor();
 			case ArduinoPackage.BLOCK: return createBlock();
 			case ArduinoPackage.ARDUINO_BOARD: return createArduinoBoard();
 			case ArduinoPackage.BOOLEAN_VARIABLE_REF: return createBooleanVariableRef();
 			case ArduinoPackage.BLUETOOTH_TRANSCEIVER: return createBluetoothTransceiver();
-			case ArduinoPackage.WAIT_FOR: return createWaitFor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

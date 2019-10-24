@@ -171,6 +171,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Fan" eSuperTypes="#//ArduinoDigitalModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="MusicPlayer" eSuperTypes="#//ArduinoAnalogModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoModule" abstract="true" eSuperTypes="#//Module"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WaitFor" eSuperTypes="#//Utilities">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pin" eType="#//Pin"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//ChangeType"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
@@ -199,10 +203,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="#//ArduinoAnalogModule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" upperBound="-1"
         eType="#//BluetoothTransceiver"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WaitFor" eSuperTypes="#//Utilities">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="#//Module"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//ChangeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChangeType">
     <eLiterals name="RISING"/>
