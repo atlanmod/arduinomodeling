@@ -1,3 +1,4 @@
+
 package org.gemoc.arduino.sequential.k3dsa
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
@@ -52,6 +53,7 @@ import static extension org.gemoc.arduino.sequential.k3dsa.Instruction_UtilitesA
 import static extension org.gemoc.arduino.sequential.k3dsa.IntegerVariable_EvaluableAspect.*
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import org.gemoc.sequential.model.arduino.WaitFor
+import org.gemoc.sequential.model.arduino.ChangeType
 
 @Aspect(className=Instruction)
 class Instruction_UtilitesAspect {
@@ -340,34 +342,32 @@ class WaitFor_ExecutableAspect extends Utilities_ExecutableAspect {
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
-		
-		if ( _self.validated) {
+		_self.value = _self.pin.level		
+		_self.waiting = true
+		while (!_self.isValidated) {
+			_self.moduleActivated = false			
+			_self.loop			
+		}
+		if ( _self.isValidated) {
 			_self.moduleActivated = false
 			_self.waiting = false
+			println("VALIDATED")
 			return
-		}
-		_self.waiting = true
-		while (!(_self.moduleActivated && _self.validated)) {
-			_self.moduleActivated = false
-			println("Waiting")
-			_self.loop			
 		}
 		_self.moduleActivated = false
 		_self.waiting = false
 	}
 	
 	private def boolean isValidated() {
-		switch(_self.mode) {
-			case CHANGE:
-				return _self.value != _self.pin.level
-					
-			case FALLING:
-				return _self.value > _self.pin.level
-				
-			case RISING:
-				return _self.value < _self.pin.level
-				
-		}				
+		if (_self.mode == ChangeType.CHANGE) {
+			return _self.value != _self.pin.level
+		} else if (_self.mode == ChangeType.RISING) {
+			return _self.value < _self.pin.level
+		} else if (_self.mode == ChangeType.FALLING) {
+			return _self.value > _self.pin.level
+		} else {			
+			return false
+		}			
 	}
 	
 	@Step
